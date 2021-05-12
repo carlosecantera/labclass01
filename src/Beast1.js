@@ -2,8 +2,9 @@ import React from 'react';
 
 class Beast1 extends React.Component {
   constructor(props) {
-  super(props);
-}
+    super(props);
+
+  }
 
 render() {
   return(

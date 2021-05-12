@@ -5,21 +5,26 @@ import Footer from './Footer.js';
 import Main from './Main.js';
 import Beast1 from './Beast1';
 
-class App extends React.Component {
-  constructor() {
-    super();
+constructor() {
+  super()
+  this.state = {
+    count: 0,
+  }
+} 
+
+  voteCount = () => {
+    this.setState({count: this.state.count + 1});
   }
 
-
-  render(){
-    return(
-      <div id="app">
-        <Header />
-        <Main title="my horned beast" />
-        <Footer />
-        <Beast1 />
-      </div>
-    )
-  }
+function Beast() {
+  return (
+    <div className="Beast">
+      <Header />
+      <Main />
+      <Footer />
+      <Beast1 />
+    </div>
+  )
 }
-export default App;
+
+export default Beast;

@@ -1,9 +1,9 @@
-import React from 'react'
-import Beast1 from './Beast1.js'
-class Main extends React.Component {
+import React from 'react';
+import HornedBeast from './HornedBeast';
 
+class Main extends React.Component {
+    
   data = [{
-  
     "image_url": "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg",
     "title": "UniWhal",
     "description": "A unicorn and a narwhal nuzzling their horns",
@@ -27,13 +27,15 @@ class Main extends React.Component {
     "horns": 1
 }]
 
-render(){
-  return(
-    <div id='main'>
-    {this.data.map(item => <Beast1 title={item.title} src={item.image_url} alt={item.keyword} description={item.description} />)}
-    </div>
+  render() {
+    return(
+      <div id="main">
+          {this.data.map(item => <HornedBeast title={item.title} src={item.image_url} alt={item.keyword} description={item.description} />)}
+      </div>
+  
     )
   }
+
 }
 
 export default Main;

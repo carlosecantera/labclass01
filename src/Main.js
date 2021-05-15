@@ -1,9 +1,14 @@
-import React from 'react'
-import Beast1 from './Beast1.js'
-class Main extends React.Component {
 
+// The Main component should pass props for the title, image and description to each HornedBeast component. You will find this information in the provided JSON file.
+
+
+
+import React from 'react';
+import HornedBeast from './HornedBeast';
+import CardColumns from 'react-bootstrap/CardColumns';
+class Main extends React.Component {
+    
   data = [{
-  
     "image_url": "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg",
     "title": "UniWhal",
     "description": "A unicorn and a narwhal nuzzling their horns",
@@ -27,13 +32,18 @@ class Main extends React.Component {
     "horns": 1
 }]
 
-render(){
-  return(
-    <div id='main'>
-    {this.data.map(item => <Beast1 title={item.title} src={item.image_url} alt={item.keyword} description={item.description} />)}
-    </div>
-    )
+  render() {
+    console.log(this.data);
+    return(
+      <div id="main">
+        <CardColumns>
+        {this.data.map((item, idx) => <HornedBeast title={item.title} src={item.image_url} alt={item.keyword} description={item.description} key={idx} />)};
+        </CardColumns> 
+      </div>
+  
+    );
   }
+
 }
 
 export default Main;

@@ -1,6 +1,11 @@
+
+// The Main component should pass props for the title, image and description to each HornedBeast component. You will find this information in the provided JSON file.
+
+
+
 import React from 'react';
 import HornedBeast from './HornedBeast';
-
+import CardColumns from 'react-bootstrap/CardColumns';
 class Main extends React.Component {
     
   data = [{
@@ -28,12 +33,15 @@ class Main extends React.Component {
 }]
 
   render() {
+    console.log(this.data);
     return(
       <div id="main">
-          {this.data.map(item => <HornedBeast title={item.title} src={item.image_url} alt={item.keyword} description={item.description} />)}
+        <CardColumns>
+        {this.data.map((item, idx) => <HornedBeast title={item.title} src={item.image_url} alt={item.keyword} description={item.description} key={idx} />)};
+        </CardColumns> 
       </div>
   
-    )
+    );
   }
 
 }
